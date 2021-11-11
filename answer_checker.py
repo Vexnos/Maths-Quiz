@@ -19,8 +19,8 @@ def answer_checker():
   print("Here come the questions, remember to press enter when you have typed your answer")
   time.sleep(2)
   for i in range(5): #Loops the question generator 5 times
-    num1 = 2
-    num2 = 12
+    num1 = random.randint(n1,n2)
+    num2 = random.randint(n1,n2)
     
     answer = num1 * num2 #Defines the answer
     guess = ""
@@ -34,7 +34,10 @@ def answer_checker():
       score += 1
       print(f"The answer is correct! Your score is now {score}")
     else:
-      score -= 1
+      if(score <= 0):
+        score = 0
+      else:
+        score -= 1
       print(f"Incorrect, the answer was {answer}. Your score is now {score}")
     
   return
@@ -42,6 +45,8 @@ def answer_checker():
 #-------Main Routine-------
 if(__name__ == "__main__"):
   while(True):
+    n1 = 1
+    n2 = 12
     answer_checker()
 
     prompt = input("Test again? (y/n): ")
