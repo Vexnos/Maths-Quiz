@@ -41,6 +41,7 @@ def diff():
       continue
   return
 
+#-------Main Routine--------
 if(__name__ == "__main__"):
   while(True):
     diff()
