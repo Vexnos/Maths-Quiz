@@ -14,8 +14,8 @@ def diff():
   global n1, n2
   while(True):
     try:
-      factor1 = int(input("\nPlease enter the 1st factor (Press enter): "))
-      factor2 = int(input("\nPlease enter the 2nd factor (Press enter): "))
+      factor1 = int(input("\nPlease enter the 1st factor (Type the factor then press enter): "))
+      factor2 = int(input("\nPlease enter the 2nd factor (Type the factor then press enter): "))
     except ValueError:
       print("Invalid value, please try again")
       continue
