@@ -6,7 +6,7 @@
   Date: 2021-11-03
   Version: 1
 
-  Question Component
+  Question Generator Component
 
 '''
 
@@ -58,11 +58,9 @@ def question(): # TODO: Ask if the user wants to be timed
 #-------Main Routine-------
 if(__name__ == "__main__"):
   while(True):
-    print("Welcome to my mathgame! A quiz to test your multiplication maths skills.")
     n1 = 1
     n2 = 12
     guess_limit = 2
-    time.sleep(3)
     question()
 
     prompt = input("Test again? (y/n): ")

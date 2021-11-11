@@ -9,10 +9,6 @@
   Difficulty Component
 
 '''
-
-#-------Libraries-------
-
-
 #-------Functions-------
 def diff():
   global n1, n2, guess_limit
