@@ -23,10 +23,16 @@ def diff():
       n1 = factor1
     if(factor2 > 0 and factor2 <= 20):
       n2 = factor2
-      break
     else:
       print("Your factors cannot be 0 or above 20, please try again")
       continue
+
+    confirm = input("Are you sure about these factors? (y/n): ")
+    if(confirm.lower() == "y"):
+      break
+    else:
+      continue
+
   return
 
 #-------Main Routine--------

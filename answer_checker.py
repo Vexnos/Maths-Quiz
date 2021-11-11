@@ -14,7 +14,7 @@ import random
 import time
 
 #-------Functions-------
-def checker():
+def answer_checker():
   score = 0
   print("Here come the questions, remember to press enter when you have typed your answer")
   time.sleep(2)
@@ -34,6 +34,7 @@ def checker():
       score += 1
       print(f"The answer is correct! Your score is now {score}")
     else:
+      score -= 1
       print(f"Incorrect, the answer was {answer}. Your score is now {score}")
     
   return
@@ -41,7 +42,7 @@ def checker():
 #-------Main Routine-------
 if(__name__ == "__main__"):
   while(True):
-    checker()
+    answer_checker()
 
     prompt = input("Test again? (y/n): ")
     if(prompt.lower() != "y"):

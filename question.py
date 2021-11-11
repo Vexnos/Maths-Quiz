@@ -16,11 +16,12 @@ import time
 
 #-------Functions-------
 def question():
-  start = time.time() #Starts the timer
+  global question, answer, guess, score
   score = 0
   print("Here come the questions, remember to press enter when you have typed your answer")
   time.sleep(2)
-  for i in range(5): #Loops the question generator 10 times
+  start = time.time() #Starts the timer
+  for i in range(3): #Loops the question generator 10 times
     num1 = random.randint(n1,n2) #Generates a random number using the factors from the diff() function
     num2 = random.randint(n1,n2)
     
@@ -33,7 +34,7 @@ def question():
   stop = time.time()
   user_time = stop-start
 
-  print(f"\nscore of {score}, time = {user_time:.2f}s\n") # TODO: add an actual sentence here
+  print(f"You got a score of {score}/10 in a time of {user_time:.2f}s")
   #Displays the user's time to 2 significant figures
 
   return
