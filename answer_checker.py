@@ -18,7 +18,7 @@ def checker():
   score = 0
   print("Here come the questions, remember to press enter when you have typed your answer")
   time.sleep(2)
-  for i in range(5): #Loops the question generator 10 times
+  for i in range(5): #Loops the question generator 5 times
     num1 = 2
     num2 = 12
     

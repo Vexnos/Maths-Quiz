@@ -11,29 +11,21 @@
 '''
 #-------Functions-------
 def diff():
-  global n1, n2, guess_limit
+  global n1, n2
   while(True):
-    difficulty = input(str("Please enter your desired difficulty (easy/medium/hard): "))
-    if(difficulty == "easy"):
-      n1 = 1
-      n2 = 10
-      guess_limit = 3
-      print(f"n1 = {n1}, n2 = {n2}, guess_limit = {guess_limit}")
-      break
-    elif(difficulty == "medium"):
-      n1 = 2
-      n2 = 12
-      guess_limit = 2
-      print(f"n1 = {n1}, n2 = {n2}, guess_limit = {guess_limit}")
-      break
-    elif(difficulty == "hard"):
-      n1 = 2
-      n2 = 20
-      guess_limit = 1
-      print(f"n1 = {n1}, n2 = {n2}, guess_limit = {guess_limit}")
+    try:
+      factor1 = int(input("Please enter the 1st factor (Press enter): "))
+      factor2 = int(input("Please enter the 2nd factor (Press enter): "))
+    except ValueError:
+      print("Invalid value, please try again")
+      continue
+    if(factor1 > 0 and factor1 <= 20):
+      n1 = factor1
+    if(factor2 > 0 and factor2 <= 20):
+      n2 = factor2
       break
     else:
-      print("\nPlease enter a valid difficulty\n")
+      print("Your factors cannot be 0 or above 20, please try again")
       continue
   return
 
@@ -41,6 +33,7 @@ def diff():
 if(__name__ == "__main__"):
   while(True):
     diff()
+    print(f"{n1} and {n2}")
 
     prompt = input("Test again? (y/n): ")
     if(prompt.lower() != "y"):
