@@ -18,7 +18,7 @@ import time
 def question():
   global question, answer, guess, score
   score = 0
-  print("Here come the questions, remember to press enter when you have typed your answer")
+  print("\nHere come the questions, remember to press enter when you have typed your answer")
   time.sleep(2)
   start = time.time() #Starts the timer
   for i in range(3): #Loops the question generator 10 times
