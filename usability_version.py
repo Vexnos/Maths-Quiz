@@ -86,7 +86,7 @@ def answer_checker():
     score += 1
     print(f"The answer is correct! Your score is now {score}")
   else:
-    if score <= 0:
+    if(score <= 0):
       score = 0 #Checks that the score cannot be negative
     else:
       score -= 1
