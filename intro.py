@@ -24,6 +24,8 @@ def intro():
   ''')
   time.sleep(12)
 
+  return
+
 #-------Main Routine-------
 if(__name__ == "__main__"):
   while(True):
