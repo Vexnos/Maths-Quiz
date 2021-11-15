@@ -2,13 +2,13 @@
 --------------------------------------------------------------------
   usability_version.py
 
-  Project: Multiplication Maths Quiz
+   Project: Multiplication Maths Quiz
   Standard: 91883 & 91884
-  School: Mountainview Highschool
-  Author: Daniel Lagesse
-  Date: 2021-11-11
-  Version: 1
-  Python: 3.9.4
+    School: Mountainview Highschool
+    Author: Daniel Lagesse
+      Date: 2021-11-11
+   Version: 1
+    Python: 3.9.4
 
   Usability Version
 --------------------------------------------------------------------

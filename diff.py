@@ -1,13 +1,17 @@
 '''
-
+--------------------------------------------------------------------
   diff.py
 
-  Author: Daniel Lagesse
-  Date: 2021-10-20
-  Version: 1
+   Project: Multiplication Maths Quiz
+  Standard: 91883 & 91884
+    School: Mountainview Highschool
+    Author: Daniel Lagesse
+      Date: 2021-10-20
+   Version: 1
+    Python: 3.9.4
 
   Difficulty Component
-
+--------------------------------------------------------------------
 '''
 #-------Functions-------
 def diff():
