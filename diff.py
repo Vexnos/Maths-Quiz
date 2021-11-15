@@ -13,21 +13,25 @@
 def diff():
   global n1, n2
   while(True):
-    try:
-      factor1 = int(input("\nPlease enter the 1st factor (Type the factor then press enter): "))
-      factor2 = int(input("\nPlease enter the 2nd factor (Type the factor then press enter): "))
-    except ValueError:
-      print("Invalid value, please try again")
-      continue
-    if(factor1 > 0 and factor1 <= 20):
-      n1 = factor1
-    if(factor2 >= 10 and factor2 <= 20):
-      n2 = factor2
-    else:
-      print("Your first factor cannot be 0 or above 20, your second cannot be below 10 or above 20, please try again")
-      continue
+    while(True):
+      difficulty = input("\nPlease enter the desired difficulty (easy/medium/hard): ")
+      if(difficulty.lower()) == "easy":
+        n1 = 1
+        n2 = 10
+        break
+      elif(difficulty.lower()) == "medium":
+        n1 = 2
+        n2 = 12
+        break
+      elif(difficulty.lower()) == "hard":
+        n1 = 2
+        n2 = 20
+        break
+      else:
+        print("Invalid difficulty entered, please try again")
+        continue
 
-    confirm = input("\nAre you sure about these factors? (y/n): ")
+    confirm = input("\nAre you sure you want to play this difficulty? (y/n): ")
     if(confirm.lower() == "y"):
       break
     else:
