@@ -18,12 +18,13 @@ import random
 import time
 
 #-------Functions-------
-def question():
+#This is the question generator, it will generate 10 random questions using the factors from the diff() function.
+def questions():
   global question, answer, guess, score
-  score = 0
+  score = 0 #Sets the score to 0 every time the program is activated.
   print("\nHere come the questions, remember to press enter when you have typed your answer")
   time.sleep(2)
-  start = time.time() #Starts the timer
+  start = time.time() #Starts the timer and stores the recorded time in a variable
   for i in range(3): #Loops the question generator 10 times
     num1 = random.randint(n1,n2) #Generates a random number using the factors from the diff() function
     num2 = random.randint(n1,n2)
@@ -34,20 +35,19 @@ def question():
 
     print(question) #Prints the question
 
-  stop = time.time()
-  user_time = stop-start
+  stop = time.time() #Stops the timer and stores the recorded time in a variable
+  user_time = stop-start #Subtracting the start time from stop time allows us to find the user's time.
 
-  print(f"You got a score of {score}/10 in a time of {user_time:.2f}s")
-  #Displays the user's time to 2 significant figures
+  print(f"You got a score of {score}/10 in a time of {user_time:.2f}s") #{user_time:.2f} Displays the user's time to 2 significant figures
 
   return
 
 #-------Main Routine-------
 if(__name__ == "__main__"):
   while(True):
-    n1 = 1
+    n1 = 1 #These are test factors
     n2 = 12
-    question()
+    questions() #Calls the questions function
 
     prompt = input("Test again? (y/n): ")
     if(prompt.lower() != "y"):

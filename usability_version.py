@@ -45,12 +45,7 @@ def intro():
   Good luck, User!
   ''')
 
-  time.sleep(5) #Tells the program to sleep for 5 seconds before checking if the user wants to continue
-
-  ready = input("Do you want to play? (y/n), press enter afterwards: ") #Takes the user's choice and stores it in a variable
-  if(ready.lower() != "y"):
-    print("Okay, quitting the program")
-    quit() #Quits the program if the user doesn't wish to continue
+  time.sleep(5) #Tells the program to sleep for 5 seconds before displaying the difficulties
 
   return
 
@@ -94,7 +89,7 @@ def guess_validator():
       insults = ["You idiot, enter a number",
                  "Are you mentally handicapped? Enter a number",
                  "Come on, you know maths, enter a number",
-                 "Unbelievable, how do you not know how to enter a number?"]
+                 "Unbelievable, do you not know how to enter a number?"]
       
       insult = random.choice(insults)
       print(f"\n{insult}\n")
@@ -107,7 +102,7 @@ def guess_validator():
 #This is the answer checker, it checks if the user's guess is the same as the answer, if it is, the user gains a point, if not, a point is revoked
 def answer_checker():
   global score
-  guess_validator() #Calls the guess_validator() function to ensure an invalid value is not treated as an incorrect answer
+  guess_validator() #Calls the guess_validator function to ensure an invalid value is not treated as an incorrect answer
 
   if(guess == answer):
     score += 1 #Adds 1 point to the score
@@ -138,7 +133,7 @@ def questions():
 
     print(question) #Prints the question
 
-    answer_checker() #Calls the answer_checker() function
+    answer_checker() #Calls the answer_checker function
 
   stop = time.time() #Stops the timer and stores the recorded time in a variable
   user_time = stop-start #Subtracting the start time from stop time allows us to find the user's time.
@@ -152,7 +147,7 @@ if(__name__ == "__main__"):
   while(True): #Loops the entire quiz if the user wishes to play again
     intro() #Calls the intro function
     diff() #Calls the diff function
-    questions() #Calls the questions generator function
+    questions() #Calls the questions function
 
     prompt = input("Play again? (y/n): ") #Asks if the user wants to play again and stores their choice in a variable
     if prompt.lower() != "y":

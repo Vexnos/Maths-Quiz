@@ -31,11 +31,6 @@ def intro():
 
   time.sleep(5)
 
-  ready = input("Do you want to play? (y/n), press enter afterwards: ")
-  if(ready.lower() != "y"):
-    print("Okay, quitting the program")
-    quit()
-
   return
 
 #-------Main Routine-------

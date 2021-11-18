@@ -27,7 +27,7 @@ def guess_validator():
       insults = ["You idiot, enter a number",
                  "Are you mentally handicapped? Enter a number",
                  "Come on, you know maths, enter a number",
-                 "Unbelievable, how do you not know how to enter a number?"]
+                 "Unbelievable, do you not know how to enter a number?"]
       
       insult = random.choice(insults)
       print(f"\n{insult}\n")
