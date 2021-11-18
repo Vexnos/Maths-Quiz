@@ -14,8 +14,8 @@
 --------------------------------------------------------------------
 '''
 #-------Libraries-------
-import random
-import time
+import random #Imports the random library which allows the program to generate random numbers for the question
+import time #Imports the time library which allows the program to slow down the interval between actions and allows the quiz to be timed
 
 #-------Functions-------
 #This is the question generator, it will generate 10 random questions using the factors from the diff() function.
@@ -45,7 +45,7 @@ def questions():
 #-------Main Routine-------
 if(__name__ == "__main__"):
   while(True):
-    n1 = 1 #These are test factors
+    n1 = 1 #These are test factors and will not be in the actual quiz
     n2 = 12
     questions() #Calls the questions function
 

@@ -36,7 +36,7 @@ import time #Imports the time library which allows the program to slow down the 
 def intro():
   time.sleep(1) #Tells the program to sleep for 1 second before printing the intro message
   print('''
-  Welcome, user to my math quiz! A quiz to practise your multiplication skills!
+  Welcome, user to my maths quiz! A quiz to practise your multiplication skills!
   The quiz allows you to choose your desired difficulty for 10 randomly generated multiplication questions.
   If you correctly guess a question, you will gain a point.
   If you incorrectly guess the question, you will lose a point (points can't go below 0).
@@ -79,7 +79,7 @@ def diff():
 
   return
 
-#This is the guess validator, it ensures the user cannot enter an invalid value as their answer to the question (This function is designed to work within the question() function)
+#This is the guess validator, it ensures the user cannot enter an invalid value as their answer to the question (This function is designed to work within the questions function)
 def guess_validator():
   global guess #Makes the user's guess global so other functions can use it
   while(True): #Loops to ensure that an invalid value cannot be stored
@@ -99,7 +99,7 @@ def guess_validator():
 
   return
 
-#This is the answer checker, it checks if the user's guess is the same as the answer, if it is, the user gains a point, if not, a point is revoked
+#This is the answer checker, it checks if the user's guess is the same as the answer, if it is, the user gains a point, if not, a point is revoked (This function is designed to work within the question function)
 def answer_checker():
   global score
   guess_validator() #Calls the guess_validator function to ensure an invalid value is not treated as an incorrect answer

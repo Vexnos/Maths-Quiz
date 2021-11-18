@@ -14,13 +14,14 @@
 --------------------------------------------------------------------
 '''
 #-------Libraries-------
-import random
+import random #Imports the random library which allows the program to generate random numbers for the question
 
 #-------Functions-------
+#This is the guess validator, it ensures the user cannot enter an invalid value as their answer to the question (This function is designed to work within the questions function)
 def guess_validator():
-  global guess
-  example_question = "\n2 x 3\n"
-  while(True):
+  global guess #Makes the user's guess global so other functions can use it
+  example_question = "\n2 x 3\n" #This is test code and will be removed in the final version
+  while(True): #Loops to ensure that an invalid value cannot be stored
     try:
       guess = int(input("Please type the answer here (press enter afterwards): "))
     except ValueError:
@@ -31,7 +32,8 @@ def guess_validator():
       
       insult = random.choice(insults)
       print(f"\n{insult}\n")
-      print(example_question)
+      print(example_question) #example_question will be replaced with the question variable in the final quiz
+      #Prints the question again so the user doesn't have to scroll up
       continue
     print(f"guess = {guess}")
     break

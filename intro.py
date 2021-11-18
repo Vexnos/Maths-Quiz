@@ -14,13 +14,14 @@
 --------------------------------------------------------------------
 '''
 #-------Libraries-------
-import time
+import time #Imports the time library which allows the program to slow down the interval between actions and allows the quiz to be timed
 
 #-------Functions-------
+#This is the intro function, it prints the intro message introdrucing the user to the quiz and asks if the user wants to continue the quiz.
 def intro():
-  time.sleep(1)
+  time.sleep(1) #Tells the program to sleep for 1 second before printing the intro message
   print('''
-  Welcome, user to my math quiz! A quiz to practise your multiplication skills!
+  Welcome, user to my maths quiz! A quiz to practise your multiplication skills!
   The quiz allows you to choose your desired difficulty for 10 randomly generated multiplication questions.
   If you correctly guess a question, you will gain a point.
   If you incorrectly guess the question, you will lose a point (points can't go below 0).
@@ -29,7 +30,7 @@ def intro():
   Good luck, User!
   ''')
 
-  time.sleep(5)
+  time.sleep(5) #Tells the program to sleep for 5 seconds before displaying the difficulties
 
   return
 

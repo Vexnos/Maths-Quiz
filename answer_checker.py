@@ -14,11 +14,14 @@
 --------------------------------------------------------------------
 '''
 #-------Libraries-------
-import random
-import time
+import random #Imports the random library which allows the program to generate random numbers for the question
+import time #Imports the time library which allows the program to slow down the interval between actions and allows the quiz to be timed
 
 #-------Functions-------
+#This is the answer checker, it checks if the user's guess is the same as the answer, if it is, the user gains a point, if not, a point is revoked (This function is designed to work within the question function)
 def answer_checker():
+  global score
+  #-------Code for Testing-------
   score = 0
   print("Here come the questions, remember to press enter when you have typed your answer")
   time.sleep(2)
@@ -32,16 +35,18 @@ def answer_checker():
 
     print(question) #Prints the question
 
+    #---------------------------------------
+
     guess = int(input("Please enter the answer (Press Enter once you have typed your answer): "))
 
     if(guess == answer):
-      score += 1
+      score += 1 #Adds 1 point to the score
       print(f"The answer is correct! Your score is now {score}")
     else:
       if(score <= 0):
-        score = 0
+        score = 0 #Checks that the score cannot be negative
       else:
-        score -= 1
+        score -= 1 #Revokes a point from the score if score is above 0
       print(f"Incorrect, the answer was {answer}. Your score is now {score}")
     
   return
