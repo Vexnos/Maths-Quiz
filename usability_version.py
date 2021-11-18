@@ -22,7 +22,7 @@
   The user will also be timed.
 
   The program is structed with components which all function together to run the quiz.
-  Functions include: intro(Introduces the user), diff(Allows the user to select the difficulty), question(Generates the questions),
+  Functions include: intro(Introduces the user), diff(Allows the user to select the difficulty), questions(Generates the questions),
   guess_validator(Ensures the user doesn't input an incorrect value), and answer_checker(Checks if the user's answer is correct).
 --------------------------------------------------------------------
 '''
@@ -122,7 +122,7 @@ def answer_checker():
   return
 
 #This is the question generator, it will generate 10 random questions using the factors from the diff() function.
-def question():
+def questions():
   global question, answer, guess, score
   score = 0 #Sets the score to 0 every time the program is activated.
   print("\nHere come the questions, remember to press enter when you have typed your answer")
@@ -150,9 +150,9 @@ def question():
 #-------Main Routine-------
 if(__name__ == "__main__"):
   while(True): #Loops the entire quiz if the user wishes to play again
-    intro() #Calls the intro() function
-    diff() #Calls the diff() function
-    question() #Calls the question() generator function
+    intro() #Calls the intro function
+    diff() #Calls the diff function
+    questions() #Calls the questions generator function
 
     prompt = input("Play again? (y/n): ") #Asks if the user wants to play again and stores their choice in a variable
     if prompt.lower() != "y":
