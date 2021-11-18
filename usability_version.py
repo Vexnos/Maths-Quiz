@@ -45,8 +45,6 @@ def intro():
   Good luck, User!
   ''')
 
-  time.sleep(5) #Tells the program to sleep for 5 seconds before displaying the difficulties
-
   return
 
 #This is the difficulty function which asks the user for their desired difficulty. Their choice will determine the difficulty of the questions.
@@ -54,19 +52,21 @@ def diff():
   global n1, n2 #Makes the factors for the randomly generated questions global so other functions can access them.
   while(True): #Loops incase the user decides to change difficulty
     while(True): #Loops incase the user enters an invalid difficulty (This has to be inside two while loops otherwise the confirmation will trigger even if the input is invalid).
+      difficulties = ["easy", "medium", "hard"]
       difficulty = input("\nPlease enter the desired difficulty (easy/medium/hard): ")
-      if(difficulty.lower()) == "easy":
-        n1 = 1 #Defines the first factor
-        n2 = 10 #Defines the second factor
-        break #Breaks the while loop
-      elif(difficulty.lower()) == "medium":
-        n1 = 2
-        n2 = 12
-        break
-      elif(difficulty.lower()) == "hard":
-        n1 = 2
-        n2 = 20
-        break
+      if difficulty.lower() in difficulties: #Checks that the user input matches one of the difficulties. If not, the user will be prompted to enter again
+        if(difficulty) == "easy":
+          n1 = 1 #Defines the first factor
+          n2 = 10 #Defines the second factor
+          break #Breaks the while loop
+        elif(difficulty) == "medium":
+          n1 = 2
+          n2 = 12
+          break
+        else:
+          n1 = 2
+          n2 = 20
+          break
       else:
         print("Invalid difficulty entered, please try again")
         continue #Continues the loop
@@ -86,13 +86,7 @@ def guess_validator():
     try:
       guess = int(input("Please type the answer here (press enter afterwards): "))
     except ValueError:
-      insults = ["You idiot, enter a number",
-                 "Are you mentally handicapped? Enter a number",
-                 "Come on, you know maths, enter a number",
-                 "Unbelievable, do you not know how to enter a number?"]
-      
-      insult = random.choice(insults)
-      print(f"\n{insult}\n")
+      print("Invalid value entered, please try again")
       print(question) #Prints the question again so the user doesn't have to scroll up
       continue
     break

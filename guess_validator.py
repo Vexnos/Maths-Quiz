@@ -25,13 +25,7 @@ def guess_validator():
     try:
       guess = int(input("Please type the answer here (press enter afterwards): "))
     except ValueError:
-      insults = ["You idiot, enter a number",
-                 "Are you mentally handicapped? Enter a number",
-                 "Come on, you know maths, enter a number",
-                 "Unbelievable, do you not know how to enter a number?"]
-      
-      insult = random.choice(insults)
-      print(f"\n{insult}\n")
+      print("Invalid value entered, please try again")
       print(example_question) #example_question will be replaced with the question variable in the final quiz
       #Prints the question again so the user doesn't have to scroll up
       continue

@@ -30,8 +30,6 @@ def intro():
   Good luck, User!
   ''')
 
-  time.sleep(5) #Tells the program to sleep for 5 seconds before displaying the difficulties
-
   return
 
 #-------Main Routine-------
