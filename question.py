@@ -49,6 +49,6 @@ if(__name__ == "__main__"):
     n2 = 12
     questions() #Calls the questions function
 
-    prompt = input("Test again? (y/n): ")
+    prompt = input("Test again? (y/n): ") # Test Code
     if(prompt.lower() != "y"):
       break

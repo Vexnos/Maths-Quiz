@@ -45,6 +45,6 @@ if(__name__ == "__main__"):
   while(True):
     guess_validator()
 
-    prompt = input("Test again? (y/n): ")
+    prompt = input("Test again? (y/n): ") # Test Code
     if(prompt.lower() != "y"):
       break
