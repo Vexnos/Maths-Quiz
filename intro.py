@@ -25,7 +25,6 @@ def intro():
   The quiz allows you to choose your desired difficulty for 10 randomly generated multiplication questions.
   If you correctly guess a question, you will gain a point.
   If you incorrectly guess the question, you will lose a point (points can't go below 0).
-  You will be timed during this quiz.
   Your final score and time will be presented at the end of the questions.
   Good luck, User!
   ''')

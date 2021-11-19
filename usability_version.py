@@ -22,7 +22,7 @@
   The user will also be timed.
 
   The program is structed with components which all function together to run the quiz.
-  Functions include: intro(Introduces the user), diff(Allows the user to select the difficulty), questions(Generates the questions),
+  Functions include: intro(Introduces the user), diff(Allows the user to select the difficulty), question(Generates the questions),
   guess_validator(Ensures the user doesn't input an incorrect value), and answer_checker(Checks if the user's answer is correct).
 --------------------------------------------------------------------
 '''
@@ -40,8 +40,7 @@ def intro():
   The quiz allows you to choose your desired difficulty for 10 randomly generated multiplication questions.
   If you correctly guess a question, you will gain a point.
   If you incorrectly guess the question, you will lose a point (points can't go below 0).
-  You will be timed during this quiz.
-  Your final score and time will be presented at the end of the questions.
+  Your final score will be presented at the end of the questions.
   Good luck, User!
   ''')
 
@@ -72,7 +71,7 @@ def diff():
       print("Your first factor cannot be 0 or above 20, your second cannot be below 10 or above 20, please try again")
       continue
 
-    confirm = input("\nAre you sure you want to play this difficulty? (y/n): ")
+    confirm = input("\nAre you sure you want to play with these factors? (y/n): ")
     if(confirm.lower() == "y"):
       break
     else:
@@ -109,7 +108,7 @@ def answer_checker():
   return
 
 #This is the question generator, it will generate 10 random questions using the factors from the diff() function.
-def questions():
+def question():
   global question, answer, guess, score
   score = 0 #Sets the score to 0 every time the program is activated.
   print("\nHere come the questions")
@@ -139,7 +138,7 @@ if(__name__ == "__main__"):
   while(True): #Loops the entire quiz if the user wishes to play again
     intro() #Calls the intro function
     diff() #Calls the diff function
-    questions() #Calls the questions function
+    question() #Calls the question function
 
     prompt = input("Play again? (y/n): ") #Asks if the user wants to play again and stores their choice in a variable
     if prompt.lower() != "y":

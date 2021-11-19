@@ -38,6 +38,9 @@ def intro():
   print('''
   Welcome, user to my maths quiz! A quiz to practise your multiplication skills!
   The quiz allows you to choose your desired difficulty for 10 randomly generated multiplication questions.
+  Easy will only generate 1 to 10 times tables.
+  Medium will generate from 2 to 12 times tables.
+  Hard will generate from 2 to 20 times tables.
   If you correctly guess a question, you will gain a point.
   If you incorrectly guess the question, you will lose a point (points can't go below 0).
   You will be timed during this quiz.
@@ -53,7 +56,7 @@ def diff():
   while(True): #Loops incase the user decides to change difficulty
     while(True): #Loops incase the user enters an invalid difficulty (This has to be inside two while loops otherwise the confirmation will trigger even if the input is invalid).
       difficulties = ["easy", "medium", "hard"]
-      difficulty = input("\nPlease enter the desired difficulty (type easy, medium or hard then press enter): ")
+      difficulty = input("Please enter the desired difficulty (type easy, medium or hard then press enter): ")
       if difficulty.lower() in difficulties: #Checks that the user input matches one of the difficulties. If not, the user will be prompted to enter again
         if(difficulty) == "easy":
           n1 = 1 #Defines the first factor
