@@ -17,7 +17,7 @@
 import random #Imports the random library which allows the program to generate random numbers for the question
 
 #-------Functions-------
-#This is the guess validator, it ensures the user cannot enter an invalid value as their answer to the question (This function is designed to work within the questions function)
+#This is the guess validator, it ensures the user cannot enter an invalid value as their answer to the question (This function is designed to work within the answer checker function)
 def guess_validator():
   global guess #Makes the user's guess global so other functions can use it
   example_question = "\n2 x 3\n" #This is test code and will be removed in the final version

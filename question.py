@@ -19,7 +19,7 @@ import time #Imports the time library which allows the program to slow down the 
 
 #-------Functions-------
 #This is the question generator, it will generate 10 random questions using the factors from the diff() function.
-def questions():
+def question():
   global question, answer, guess, score
   score = 0 #Sets the score to 0 every time the program is activated.
   print("\nHere come the questions, remember to press enter when you have typed your answer")
@@ -47,7 +47,7 @@ if(__name__ == "__main__"):
   while(True):
     n1 = 1 #These are test factors and will not be in the actual quiz
     n2 = 12
-    questions() #Calls the questions function
+    question() #Calls the questions function
 
     prompt = input("Test again? (y/n): ") # Test Code
     if(prompt.lower() != "y"):

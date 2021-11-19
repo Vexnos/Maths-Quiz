@@ -1,6 +1,6 @@
 '''
 --------------------------------------------------------------------
-  usability_version.py
+  final_version.py
 
    Project: Multiplication Maths Quiz
   Standard: 91883 & 91884
@@ -10,7 +10,7 @@
    Version: 1
     Python: 3.9.4
 
-  Usability Version
+  Final Version
 --------------------------------------------------------------------
   This program is a maths quiz designed for anyone above the age of 9.
   The user will face 10 randomly generated multiplication maths questions, these will be controlled by a difficulty system.
@@ -45,32 +45,31 @@ def intro():
   Good luck, User!
   ''')
 
-  time.sleep(5) #Tells the program to sleep for 5 seconds before continuuing
-
-  ready = input("Are you ready to continue? (y/n): ")
-  if(ready.lower() != "y"):
-    print("Okay, quitting the program")
-    quit()
-
   return
 
 #This is the difficulty function which asks the user for their desired difficulty. Their choice will determine the difficulty of the questions.
 def diff():
   global n1, n2 #Makes the factors for the randomly generated questions global so other functions can access them.
-  while(True):
-    try:
-      factor1 = int(input("\nPlease enter the 1st factor: (Type the factor then press enter): "))
-      factor2 = int(input("\nPlease enter the 2nd factor: (Type the factor then press enter): "))
-    except ValueError:
-      print("Invalid value, please try again")
-      continue
-    if(factor1 > 0 and factor1 <= 20):
-      n1 = factor1
-    if(factor2 > 10 and factor2 <= 20):
-      n2 = factor2
-    else:
-      print("Your first factor cannot be 0 or above 20, your second cannot be below 10 or above 20, please try again")
-      continue
+  while(True): #Loops incase the user decides to change difficulty
+    while(True): #Loops incase the user enters an invalid difficulty (This has to be inside two while loops otherwise the confirmation will trigger even if the input is invalid).
+      difficulties = ["easy", "medium", "hard"]
+      difficulty = input("\nPlease enter the desired difficulty (easy/medium/hard): ")
+      if difficulty.lower() in difficulties: #Checks that the user input matches one of the difficulties. If not, the user will be prompted to enter again
+        if(difficulty) == "easy":
+          n1 = 1 #Defines the first factor
+          n2 = 10 #Defines the second factor
+          break #Breaks the while loop
+        elif(difficulty) == "medium":
+          n1 = 2
+          n2 = 12
+          break
+        else:
+          n1 = 2
+          n2 = 20
+          break
+      else:
+        print("Invalid difficulty entered, please try again")
+        continue #Continues the loop
 
     confirm = input("\nAre you sure you want to play this difficulty? (y/n): ")
     if(confirm.lower() == "y"):
@@ -112,7 +111,7 @@ def answer_checker():
   return
 
 #This is the question generator, it will generate 10 random questions using the factors from the diff() function.
-def question():
+def questions():
   global question, answer, guess, score
   score = 0 #Sets the score to 0 every time the program is activated.
   print("\nHere come the questions, remember to press enter when you have typed your answer")
@@ -142,8 +141,9 @@ if(__name__ == "__main__"):
   while(True): #Loops the entire quiz if the user wishes to play again
     intro() #Calls the intro function
     diff() #Calls the diff function
-    question() #Calls the questions function
+    questions() #Calls the questions function
 
     prompt = input("Play again? (y/n): ") #Asks if the user wants to play again and stores their choice in a variable
     if prompt.lower() != "y":
+      print("Alright, thanks for playing, user. I'll see you again next time.")
       quit()
