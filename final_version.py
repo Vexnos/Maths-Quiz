@@ -89,7 +89,7 @@ def guess_validator():
     try:
       guess = int(input("Please type the answer here (press enter afterwards): "))
     except ValueError:
-      print("Invalid value entered, please try again")
+      print("Invalid value entered, please enter a number and try again")
       print(question) #Prints the question again so the user doesn't have to scroll up
       continue
     break

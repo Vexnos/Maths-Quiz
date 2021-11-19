@@ -19,8 +19,8 @@ def diff():
   global n1, n2 #Makes the factors for the randomly generated questions global so other functions can access them.
   while(True): #Loops incase the user decides to change difficulty
     while(True): #Loops incase the user enters an invalid difficulty (This has to be inside two while loops otherwise the confirmation will trigger even if the input is invalid).
-      difficulties = ["easy", "medium", "hard"]
-      difficulty = input("\nPlease enter the desired difficulty (easy/medium/hard): ")
+      difficulties = ["easy", "medium", "hard"] #Stores the possible difficulty in the list
+      difficulty = input("\nPlease enter the desired difficulty (type easy, medium or hard then press enter): ")
       if difficulty.lower() in difficulties: #Checks that the user input matches one of the difficulties. If not, the user will be prompted to enter again
         if(difficulty) == "easy":
           n1 = 1 #Defines the first factor

@@ -31,6 +31,11 @@ def intro():
 
   time.sleep(5) #Tells the program to sleep for 5 seconds before continuing
 
+  ready = input("Are you ready to continue? (y/n): ")
+  if(ready.lower() != "y"):
+    print("Okay, quitting the program")
+    quit()
+
   return
 
 #-------Main Routine-------

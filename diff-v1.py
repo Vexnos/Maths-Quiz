@@ -14,7 +14,7 @@
 --------------------------------------------------------------------
 '''
 #-------Functions-------
-#This is the difficulty function which asks the user for their desired difficulty. Their choice will determine the difficulty of the questions.
+#This is the difficulty function which asks the user for factors. Their choice will determine the difficulty of the questions.
 def diff():
   global n1, n2 #Makes the factors for the randomly generated questions global so other functions can access them.
   while(True):
