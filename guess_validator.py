@@ -21,6 +21,7 @@ import random #Imports the random library which allows the program to generate r
 def guess_validator():
   global guess #Makes the user's guess global so other functions can use it
   example_question = "\n2 x 3\n" #This is test code and will be removed in the final version
+  print(example_question) #Test code
   while(True): #Loops to ensure that an invalid value cannot be stored
     try:
       guess = int(input("Please type the answer here (press enter afterwards): "))
