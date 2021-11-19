@@ -53,7 +53,7 @@ def diff():
   while(True): #Loops incase the user decides to change difficulty
     while(True): #Loops incase the user enters an invalid difficulty (This has to be inside two while loops otherwise the confirmation will trigger even if the input is invalid).
       difficulties = ["easy", "medium", "hard"]
-      difficulty = input("\nPlease enter the desired difficulty (easy/medium/hard): ")
+      difficulty = input("\nPlease enter the desired difficulty (type easy, medium or hard then press enter): ")
       if difficulty.lower() in difficulties: #Checks that the user input matches one of the difficulties. If not, the user will be prompted to enter again
         if(difficulty) == "easy":
           n1 = 1 #Defines the first factor
@@ -71,7 +71,7 @@ def diff():
         print("Invalid difficulty entered, please try again")
         continue #Continues the loop
 
-    confirm = input("\nAre you sure you want to play this difficulty? (y/n): ")
+    confirm = input("\nAre you sure you want to play this difficulty? (type 'y' or 'n' and press enter): ")
     if(confirm.lower() == "y"):
       break
     else:
@@ -115,7 +115,7 @@ def questions():
   global question, answer, guess, score
   score = 0 #Sets the score to 0 every time the program is activated.
   print("\nHere come the questions, remember to press enter when you have typed your answer")
-  time.sleep(2)
+  time.sleep(3)
   start = time.time() #Starts the timer and stores the recorded time in a variable
   for i in range(10): #Loops the question generator 10 times
     num1 = random.randint(n1,n2) #Generates a random number using the factors from the diff() function
@@ -145,5 +145,5 @@ if(__name__ == "__main__"):
 
     prompt = input("Play again? (y/n): ") #Asks if the user wants to play again and stores their choice in a variable
     if prompt.lower() != "y":
-      print("Alright, thanks for playing, user. I'll see you again next time.")
+      print("Thanks for playing, goodbye!\n")
       quit()

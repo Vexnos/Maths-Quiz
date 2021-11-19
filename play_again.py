@@ -16,7 +16,9 @@
 #-------Main Routine-------
 if(__name__ == "__main__"):
   while(True):
+    print("\n---Quiz Here---") #This is test code and will not be used in the final version
 
-    prompt = input("Play again? (y/n): ")
+    prompt = input("\nPlay again? (y/n): ")
     if(prompt.lower() != "y"):
-      break
+      print("Thanks for playing, goodbye!\n")
+      quit()

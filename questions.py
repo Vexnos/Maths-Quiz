@@ -25,7 +25,7 @@ def question():
   print("\nHere come the questions, remember to press enter when you have typed your answer")
   time.sleep(2)
   start = time.time() #Starts the timer and stores the recorded time in a variable
-  for i in range(3): #Loops the question generator 10 times
+  for i in range(10): #Loops the question generator 10 times
     num1 = random.randint(n1,n2) #Generates a random number using the factors from the diff() function
     num2 = random.randint(n1,n2)
     
@@ -45,8 +45,10 @@ def question():
 #-------Main Routine-------
 if(__name__ == "__main__"):
   while(True):
-    n1 = 1 #These are test factors and will not be in the actual quiz
-    n2 = 12
+    #---------Test Code----------
+    n1 = int(input("Factor 1: "))
+    n2 = int(input("Factor 2: "))
+    #----------------------------
     question() #Calls the questions function
 
     prompt = input("Test again? (y/n): ") # Test Code
