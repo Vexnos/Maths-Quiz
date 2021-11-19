@@ -26,7 +26,7 @@ def diff():
       continue
     if(factor1 > 0 and factor1 <= 20):
       n1 = factor1
-    if(factor2 > 10 and factor2 <= 20):
+    if(factor2 >= 10 and factor2 <= 20):
       n2 = factor2
     else:
       print("Your first factor cannot be 0 or above 20, your second cannot be below 10 or above 20, please try again")

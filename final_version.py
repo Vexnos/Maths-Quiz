@@ -45,8 +45,7 @@ def intro():
   If you incorrectly guess the question, you will lose a point (points can't go below 0).
   You will be timed during this quiz.
   Your final score and time will be presented at the end of the questions.
-  Good luck, User!
-  ''')
+  Good luck, User!''')
 
   return
 
@@ -56,7 +55,7 @@ def diff():
   while(True): #Loops incase the user decides to change difficulty
     while(True): #Loops incase the user enters an invalid difficulty (This has to be inside two while loops otherwise the confirmation will trigger even if the input is invalid).
       difficulties = ["easy", "medium", "hard"]
-      difficulty = input("Please enter the desired difficulty (type easy, medium or hard then press enter): ")
+      difficulty = input("\nPlease enter the desired difficulty (type easy, medium or hard then press enter): ")
       if difficulty.lower() in difficulties: #Checks that the user input matches one of the difficulties. If not, the user will be prompted to enter again
         if(difficulty) == "easy":
           n1 = 1 #Defines the first factor
@@ -146,7 +145,7 @@ if(__name__ == "__main__"):
     diff() #Calls the diff function
     questions() #Calls the questions function
 
-    prompt = input("Play again? (y/n): ") #Asks if the user wants to play again and stores their choice in a variable
-    if prompt.lower() != "y":
+    play_again = input("Play again? (y/n): ") #Asks if the user wants to play again and stores their choice in a variable
+    if(play_again.lower() != "y"):
       print("Thanks for playing, goodbye!\n")
       quit()

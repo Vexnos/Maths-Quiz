@@ -22,7 +22,7 @@
   The user will also be timed.
 
   The program is structed with components which all function together to run the quiz.
-  Functions include: intro(Introduces the user), diff(Allows the user to select the difficulty), question(Generates the questions),
+  Functions include: intro(Introduces the user), diff(Allows the user to select the difficulty), questions(Generates the questions),
   guess_validator(Ensures the user doesn't input an incorrect value), and answer_checker(Checks if the user's answer is correct).
 --------------------------------------------------------------------
 '''
@@ -65,7 +65,7 @@ def diff():
       continue
     if(factor1 > 0 and factor1 <= 20):
       n1 = factor1
-    if(factor2 > 10 and factor2 <= 20):
+    if(factor2 >= 10 and factor2 <= 20):
       n2 = factor2
     else:
       print("Your first factor cannot be 0 or above 20, your second cannot be below 10 or above 20, please try again")
@@ -108,7 +108,7 @@ def answer_checker():
   return
 
 #This is the question generator, it will generate 10 random questions using the factors from the diff() function.
-def question():
+def questions():
   global question, answer, guess, score
   score = 0 #Sets the score to 0 every time the program is activated.
   print("\nHere come the questions")
@@ -138,8 +138,8 @@ if(__name__ == "__main__"):
   while(True): #Loops the entire quiz if the user wishes to play again
     intro() #Calls the intro function
     diff() #Calls the diff function
-    question() #Calls the question function
+    questions() #Calls the questions function
 
-    prompt = input("Play again? (y/n): ") #Asks if the user wants to play again and stores their choice in a variable
-    if prompt.lower() != "y":
+    play_again = input("Play again? (y/n): ") #Asks if the user wants to play again and stores their choice in a variable
+    if(play_again.lower() != "y"):
       quit()

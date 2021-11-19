@@ -18,7 +18,7 @@ if(__name__ == "__main__"):
   while(True):
     print("\n---Quiz Here---") #This is test code and will not be used in the final version
 
-    prompt = input("\nPlay again? (y/n): ")
-    if(prompt.lower() != "y"):
+    play_again = input("\nPlay again? (y/n): ")
+    if(play_again.lower() != "y"):
       print("Thanks for playing, goodbye!\n")
       quit()
