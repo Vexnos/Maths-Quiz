@@ -1,6 +1,6 @@
 '''
 --------------------------------------------------------------------
-  test.py
+  play_again.py
 
    Project: Multiplication Maths Quiz
   Standard: 91883 & 91884
@@ -10,13 +10,13 @@
    Version: 1
     Python: 3.9.4
 
-  Testing Template
+  Play again component
 --------------------------------------------------------------------
 '''
 #-------Main Routine-------
 if(__name__ == "__main__"):
   while(True):
 
-    prompt = input("Test again? (y/n): ")
+    prompt = input("Play again? (y/n): ")
     if(prompt.lower() != "y"):
       break

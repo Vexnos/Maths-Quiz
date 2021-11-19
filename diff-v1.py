@@ -32,7 +32,7 @@ def diff():
       print("Your first factor cannot be 0 or above 20, your second cannot be below 10 or above 20, please try again")
       continue
 
-    confirm = input("\nAre you sure you want to play this difficulty? (y/n): ")
+    confirm = input("\nAre you sure you want to play with these factors? (y/n): ")
     if(confirm.lower() == "y"):
       break
     else:

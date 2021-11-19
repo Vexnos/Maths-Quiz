@@ -10,7 +10,7 @@
    Version: 2
     Python: 3.9.4
 
-  Difficulty Component V2
+  Difficulty Component v2
 --------------------------------------------------------------------
 '''
 #-------Functions-------
