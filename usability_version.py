@@ -45,7 +45,7 @@ def intro():
   Good luck, User!
   ''')
 
-  time.sleep(5) #Tells the program to sleep for 5 seconds before continuuing
+  time.sleep(5) #Tells the program to sleep for 5 seconds before continuing
 
   ready = input("Are you ready to continue? (y/n): ")
   if(ready.lower() != "y"):
@@ -59,8 +59,8 @@ def diff():
   global n1, n2 #Makes the factors for the randomly generated questions global so other functions can access them.
   while(True):
     try:
-      factor1 = int(input("\nPlease enter the 1st factor: (Type the factor then press enter): "))
-      factor2 = int(input("\nPlease enter the 2nd factor: (Type the factor then press enter): "))
+      factor1 = int(input("\nPlease enter the 1st factor: "))
+      factor2 = int(input("\nPlease enter the 2nd factor: "))
     except ValueError:
       print("Invalid value, please try again")
       continue
@@ -85,7 +85,7 @@ def guess_validator():
   global guess #Makes the user's guess global so other functions can use it
   while(True): #Loops to ensure that an invalid value cannot be stored
     try:
-      guess = int(input("Please type the answer here (press enter afterwards): "))
+      guess = int(input("Please type the answer here: "))
     except ValueError:
       print("Invalid value entered, please try again")
       print(question) #Prints the question again so the user doesn't have to scroll up
@@ -103,19 +103,16 @@ def answer_checker():
     score += 1 #Adds 1 point to the score
     print(f"The answer is correct! Your score is now {score}")
   else:
-    if(score <= 0):
-      score = 0 #Checks that the score cannot be negative
-    else:
-      score -= 1 #Revokes a point from the score if score is above 0
+    score -= 1 #Revokes a point from the score if score is above 0
     print(f"Incorrect, the answer was {answer}. Your score is now {score}")
   
   return
 
 #This is the question generator, it will generate 10 random questions using the factors from the diff() function.
-def question():
+def questions():
   global question, answer, guess, score
   score = 0 #Sets the score to 0 every time the program is activated.
-  print("\nHere come the questions, remember to press enter when you have typed your answer")
+  print("\nHere come the questions")
   time.sleep(2)
   start = time.time() #Starts the timer and stores the recorded time in a variable
   for i in range(10): #Loops the question generator 10 times
@@ -142,7 +139,7 @@ if(__name__ == "__main__"):
   while(True): #Loops the entire quiz if the user wishes to play again
     intro() #Calls the intro function
     diff() #Calls the diff function
-    question() #Calls the questions function
+    questions() #Calls the questions function
 
     prompt = input("Play again? (y/n): ") #Asks if the user wants to play again and stores their choice in a variable
     if prompt.lower() != "y":

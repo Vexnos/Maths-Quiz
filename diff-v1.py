@@ -19,8 +19,8 @@ def diff():
   global n1, n2 #Makes the factors for the randomly generated questions global so other functions can access them.
   while(True):
     try:
-      factor1 = int(input("\nPlease enter the 1st factor: (Type the factor then press enter): "))
-      factor2 = int(input("\nPlease enter the 2nd factor: (Type the factor then press enter): "))
+      factor1 = int(input("\nPlease enter the 1st factor: "))
+      factor2 = int(input("\nPlease enter the 2nd factor: "))
     except ValueError:
       print("Invalid value, please try again")
       continue

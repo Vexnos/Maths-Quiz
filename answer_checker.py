@@ -43,10 +43,7 @@ def answer_checker():
       score += 1 #Adds 1 point to the score
       print(f"The answer is correct! Your score is now {score}")
     else:
-      if(score <= 0):
-        score = 0 #Checks that the score cannot be negative
-      else:
-        score -= 1 #Revokes a point from the score if score is above 0
+      score -= 1 #Revokes a point from the score if score is above 0
       print(f"Incorrect, the answer was {answer}. Your score is now {score}")
     
   return

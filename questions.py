@@ -22,7 +22,7 @@ import time #Imports the time library which allows the program to slow down the 
 def question():
   global question, answer, guess, score
   score = 0 #Sets the score to 0 every time the program is activated.
-  print("\nHere come the questions, remember to press enter when you have typed your answer")
+  print("\nHere come the questions")
   time.sleep(2)
   start = time.time() #Starts the timer and stores the recorded time in a variable
   for i in range(10): #Loops the question generator 10 times
