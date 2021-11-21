@@ -1,16 +1,14 @@
 '''
 --------------------------------------------------------------------
-  final_version.py
+  speedrunning.py
 
    Project: Multiplication Maths Quiz
-  Standard: 91883 & 91884
-    School: Mountainview Highschool
     Author: Daniel Lagesse
-      Date: 2021-11-11
+      Date: 2021-11-22
    Version: 1
     Python: 3.9.4
 
-  Final Version
+  Speedrunning Version
 --------------------------------------------------------------------
   This program is a maths quiz designed for anyone above the age of 9.
   The user will face 10 randomly generated multiplication maths questions, these will be controlled by a difficulty system.
