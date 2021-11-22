@@ -1,4 +1,4 @@
-'''
+"""
 --------------------------------------------------------------------
   speedrunning.py
 
@@ -23,81 +23,105 @@
   Functions include: intro(Introduces the user), diff(Allows the user to select the difficulty), questions(Generates the questions),
   guess_validator(Ensures the user doesn't input an incorrect value), and answer_checker(Checks if the user's answer is correct).
 --------------------------------------------------------------------
-'''
+"""
 # -------Libraries-------
-from random import randint  # Imports the random library which allows the program to generate random numbers for the question
-from time import perf_counter  # Imports the time library which allows the program to slow down the interval between actions and allows the quiz to be timed
+# Imports the random library which allows the program to generate random
+# numbers for the question
+from random import randint
+# Imports the time library which allows the program to slow down the interval
+# between actions and allows the quiz to be timed
+from time import perf_counter
+import sys
 
 # -------Functions-------
 
-# This is the difficulty function which asks the user for their desired difficulty. Their choice will determine the difficulty of the questions.
+# This is the difficulty function which asks the user for their desired
+# difficulty. Their choice will determine the difficulty of the questions.
 
 
 def diff():
-  while True:  # Loops incase the user enters an invalid difficulty
-    difficulties = {
-      "easy": (1, 10),
-      "medium": (2, 12),
-      "hard": (2, 20),
-      "legendary": (20, 100),
-    }
-    difficulty = input("\nPlease enter the desired difficulty (easy/medium/hard/legendary): ").lower()
-    if difficulty in difficulties:  # Checks that the user input matches one of the difficulties. If not, the user will be prompted to enter again
-      return difficulties[difficulty]
-    else:
-      print("Invalid difficulty entered, please try again")
+    while True:  # Loops incase the user enters an invalid difficulty
+        difficulties = {
+            "easy": (1, 10),
+            "medium": (2, 12),
+            "hard": (2, 20),
+            "legendary": (20, 100),
+        }
+        difficulty = input(
+            "\nPlease enter the desired difficulty (easy/medium/hard/legendary): "
+        ).lower()
+        # Checks that the user input matches one of the difficulties. If not,
+        # the user will be prompted to enter again
+        if difficulty in difficulties:
+            return difficulties[difficulty]
+        print("Invalid difficulty entered, please try again")
 
-# This is the answer checker, it checks if the user's guess is the same as the answer, if it is, the user gains a point, if not, a point is revoked (This function is designed to work within the question function)
+
+# This is the answer checker, it checks if the user's guess is the same as the
+# answer, if it is, the user gains a point, if not, a point is revoked (This
+# function is designed to work within the question function)
 
 
 def answer_checker(question, answer, score):
-  keep_going = True
-  while keep_going:  # Loops to ensure that an invalid value cannot be stored
-    try:
-      guess = int(input("Please type the answer here: "))
-      keep_going = False
-    except ValueError:
-      print("Invalid value entered, please enter a number and try again")
-      print(question)  # Prints the question again so the user doesn't have to scroll up
+    keep_going = True
+    while keep_going:  # Loops to ensure that an invalid value cannot be stored
+        try:
+            guess = int(input("Please type the answer here: "))
+            keep_going = False
+        except ValueError:
+            print("Invalid value entered, please enter a number and try again")
+            # Prints the question again so the user doesn't have to scroll up
+            print(question)
 
-  if guess == answer:
-    score += 1  # Adds 1 point to the score
-    print(f"The answer is correct! Your score is now {score}")
-  else:
-    print(f"Incorrect, the answer was {answer}. Your score is now {score}")
-  return score
-
-# This is the question generator, it will generate 10 random questions using the factors from the diff() function.
+    if guess == answer:
+        score += 1  # Adds 1 point to the score
+        print(f"The answer is correct! Your score is now {score}")
+    else:
+        print(f"Incorrect, the answer was {answer}. Your score is now {score}")
+    return score
 
 
-def questions(n1, n2):
-  QUESTION_AMOUNT = 10  # Sets the amount of questions to generate
-  score = 0  # Sets the score to 0 every time the program is activated.
-  start = perf_counter()  # Starts the timer and stores the recorded time in a variable
-  for _ in range(QUESTION_AMOUNT):  # Loops the question generator 10 times
-    num1 = randint(n1, n2)  # Generates a random number using the factors from the diff() function
-    num2 = randint(n1, n2)
+# This is the question generator, it will generate 10 random questions using
+# the factors from the diff() function.
 
-    answer = num1 * num2  # Defines the answer for each question
-    question = f"\n{num1} x {num2}\n"  # Sets the question using the randomly generated numbers
 
-    print(question)  # Prints the question
+def questions(factor_one, factor_two):
+    QUESTION_AMOUNT = 10  # Sets the amount of questions to generate
+    score = 0  # Sets the score to 0 every time the program is activated.
+    start = perf_counter(
+    )  # Starts the timer and stores the recorded time in a variable
+    for _ in range(QUESTION_AMOUNT):  # Loops the question generator 10 times
+        # Generates a random number using the factors from the diff() function
+        num1 = randint(factor_one, factor_two)
+        num2 = randint(factor_one, factor_two)
 
-    score = answer_checker(question, answer, score)  # Calls the answer_checker function
+        answer = num1 * num2  # Defines the answer for each question
+        # Sets the question using the randomly generated numbers
+        question = f"\n{num1} x {num2}\n"
 
-  user_time = perf_counter() - start  # Subtracting the start time from stop time allows us to find the user's time.
+        print(question)  # Prints the question
 
-  print(f"You got {score}/10 questions right in a time of {user_time:.2f}s")  # {user_time:.2f} Displays the user's time to 2 significant figures
+        score = answer_checker(question, answer,
+                               score)  # Calls the answer_checker function
+
+    # Subtracting the start time from stop time allows us to find the user's
+    # time.
+    user_time = perf_counter() - start
+
+    # {user_time:.2f} Displays the user's time to 2 significant figures
+    print(f"You got {score}/10 questions right in a time of {user_time:.2f}s")
+
 
 # -------Main Routine-------
 
-
 if __name__ == "__main__":
-  while True:  # Loops the entire quiz if the user wishes to play again
-    n1, n2 = diff()  # Calls the diff function
-    questions(n1, n2)  # Calls the questions function
+    while True:  # Loops the entire quiz if the user wishes to play again
+        factor_one, factor_two = diff()  # Calls the diff function
+        questions(factor_one, factor_two)  # Calls the questions function
 
-    play_again = input("Play again? (y/n): ")  # Asks if the user wants to play again and stores their choice in a variable
-    if not play_again.lower().startswith("y"):
-      print("Thanks for playing, goodbye!\n")
-      quit()
+        # Asks if the user wants to play again and stores their choice in a
+        # variable
+        play_again = input("Play again? (y/n): ")
+        if not play_again.lower().startswith("y"):
+            print("Thanks for playing, goodbye!\n")
+            sys.exit()
